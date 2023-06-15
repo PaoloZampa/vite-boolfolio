@@ -61,6 +61,9 @@ export default {
                                 {{ project.name }}
                             </h4>
                         </div>
+                        <div class="card-footer">
+                            <span class="badge text-bg-warning">{{ project.id }}</span>
+                        </div>
 
                     </div>
                 </div>
