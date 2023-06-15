@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default {
     components: {
-       
+
     },
     data() {
         return {
@@ -15,21 +15,21 @@ export default {
             error: null,
         }
     },
-    methods:{
-        getProjects(url){
+    methods: {
+        getProjects(url) {
             axios
-            .get(url)
-            .then(response => {
-                console.log(response);
-                this.projects = response.data.projects
-                this.loading = false
-            })
-            .catch(error => {
-                console.log(error);
-                this.error = error.message
-            })
+                .get(url)
+                .then(response => {
+                    console.log(response);
+                    this.projects = response.data.projects
+                    this.loading = false
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.error = error.message
+                })
         },
-        getImagePath(path){
+        getImagePath(path) {
             return this.base_url + 'storage/' + path;
         }
     },
@@ -42,13 +42,17 @@ export default {
 </script>
 
 <template>
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-dark">
         <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-          <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-          <button class="btn btn-primary btn-lg" type="button">Example button</button>
+            <h1 class="display-5 fw-bold text-info">Paolo Zampa</h1>
+            <p class="col-md-8 fs-4 text-white">Negli ultimi anni, mi sono dedicato a imparare e padroneggiare la libreria JavaScript
+                di React, che considero uno strumento straordinario per la creazione di interfacce utente moderne e
+                coinvolgenti. Ho avuto l'opportunità di lavorare su diversi progetti che mi hanno permesso di acquisire una
+                vasta esperienza nel creare componenti funzionali, gestire lo stato dell'applicazione e utilizzare librerie
+                complementari come Redux o Context API per una gestione avanzata dello stato.</p>
+            <button class="btn btn-info btn-lg my-3" type="button">Scoprimi</button>
         </div>
-      </div>
+    </div>
     <section class="projects">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
@@ -62,19 +66,15 @@ export default {
                             </h4>
                         </div>
                         <div class="card-footer">
-                            <span class="badge text-bg-warning">{{ project.id }}</span>
+                            <span class="badge text-bg-info text-white">{{ project.id }}</span>
                         </div>
 
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
 </template>
 
-<style lang="scss">
-@use './styles/general.scss';
-
-
-</style>
+<style lang="scss">@use './styles/general.scss';</style>
