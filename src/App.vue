@@ -59,7 +59,7 @@ export default {
 
                 <div class="col" v-for="project in projects">
                     <div class="card h-100 rounded-0 shadow">
-                        <img class="card-img-top" :src="getImagePath(project.image)" alt="">
+                        <img class="card-img-top rounded-0" :src="getImagePath(project.image)" alt="">
                         <div class="card-body">
                             <h4>
                                 {{ project.name }}
